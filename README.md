@@ -2,6 +2,8 @@
 
 Example of a Docker application image based on a very simple Python script.
 
+Running this container simply prints "simplescript.py is running" to stdout.
+
 
 ## Building and running
 
