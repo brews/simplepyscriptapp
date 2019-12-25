@@ -1,0 +1,11 @@
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t simplepyscriptapp .
+      - docker images
+      - docker tag simplepyscriptapp $DOCKER_USERNAME/simplepyscriptapp
+      - docker push $DOCKER_USERNAME/simplepyscriptapp
+    - stage: test
+      script: docker run --rm $DOCKER_USERNAME/simplepyscriptapp
