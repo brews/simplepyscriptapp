@@ -1,3 +1,8 @@
 """Example of a very basic script"""
 
-print("simplescript.py is running")
+import logging
+
+
+logging.basicConfig(format="%(asctime)s %(levelname)s:%(message)s",
+                    level=logging.INFO)
+logging.info("simplescript.py is running")
